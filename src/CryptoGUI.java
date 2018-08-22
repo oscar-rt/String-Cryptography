@@ -12,6 +12,9 @@ import javax.swing.UIManager;
  * @author Oscar
  */
 public class CryptoGUI extends javax.swing.JFrame {
+    
+    public static final int HEADER_LENGTH = 1000;
+    public static final int STRING_LIMIT = 1000000;
 
     /**
      * Creates new form CryptoGUI
