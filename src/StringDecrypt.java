@@ -10,4 +10,22 @@
  */
 public class StringDecrypt {
     
+    String decryptedString;
+    private String text;
+    private String passkey;
+    
+    public StringDecrypt(String text, String passkey){
+        this.text = text;
+        this.passkey = passkey;
+    }
+    
+    public OperationReport decrypt(){
+        
+        return null;
+    }
+    
+    public String getDecryptedString(){
+        
+        return this.decryptedString;
+    }
 }
