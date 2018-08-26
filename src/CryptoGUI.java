@@ -22,6 +22,14 @@ public class CryptoGUI extends javax.swing.JFrame {
     public CryptoGUI() {
         initComponents();
         setLocationRelativeTo(null);
+        
+        String test = "A";
+        try{
+        test = StringEncrypt.fileSha256ToBase64("test");
+        } catch(Exception e){
+        }
+        
+        System.out.println(test);
     }
 
     /**

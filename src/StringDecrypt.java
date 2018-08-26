@@ -21,6 +21,13 @@ public class StringDecrypt {
     
     public OperationReport decrypt(){
         
+        if(this.passkey == null){
+            
+        }
+        else{
+        
+        }
+        
         return null;
     }
     

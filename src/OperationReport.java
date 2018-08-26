@@ -6,7 +6,8 @@
 
 /**
  *
- * @author Oscar
+ * This class basically returns an operation report for whatever operation needs to be done.
+ * 
  */
 public class OperationReport {
     
