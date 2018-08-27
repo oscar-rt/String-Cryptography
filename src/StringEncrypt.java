@@ -35,7 +35,15 @@ public class StringEncrypt {
         }
         
         if(this.passkey == null){
-            
+            if(text != null && !text.equals("")){
+                
+                
+                
+                
+            }
+            else{
+                return new OperationReport(false, "TEXT STRING EMPTY", "Input text to encrypt.");
+            }
         }
         else{
             
