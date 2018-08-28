@@ -21,20 +21,16 @@ public class StringDecrypt {
     
     public OperationReport decrypt(){
         
-        if(this.passkey == null){
-            if(text != null && !text.equals("")){    
-                
-                
-                
-                
+        if(this.passkey == null || this.passkey.equals("")){
+            return new OperationReport(false, "NO PASSKEY ENTERED", "Please enter a passkey.");
+        }
+        else{
+            if(text != null && !text.equals("")){
                 
             }
             else{
                 return new OperationReport(false, "TEXT STRING EMPTY", "Input text to decrypt.");
             }
-        }
-        else{
-        
         }
         
         return null;

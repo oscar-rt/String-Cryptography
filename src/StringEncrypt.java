@@ -29,23 +29,17 @@ public class StringEncrypt {
     
     public OperationReport encrypt(){
         
-        if(text.length() > CryptoGUI.STRING_LIMIT - CryptoGUI.HEADER_LENGTH){
+        if(text.length() > CryptoGUI.STRING_LIMIT){
             return new OperationReport(false, "TEXT STRING TOO BIG", "Input a smaller string. \n\n"
-                    + "Max string size: " + (CryptoGUI.STRING_LIMIT - CryptoGUI.HEADER_LENGTH));
+                    + "Max string size is around: " + CryptoGUI.STRING_LIMIT);
         }
         
-        if(this.passkey == null){
-            if(text != null && !text.equals("")){
-                
-                
-                
-                
-            }
-            else{
-                return new OperationReport(false, "TEXT STRING EMPTY", "Input text to encrypt.");
-            }
+        if(this.passkey == null || this.passkey.equals("")){
+            return new OperationReport(false, "NO PASSKEY ENTERED", "Please enter a passkey.");
         }
         else{
+            
+            
             
         }
         
