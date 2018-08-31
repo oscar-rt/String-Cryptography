@@ -21,14 +21,7 @@ public class CryptoGUI extends javax.swing.JFrame {
     public CryptoGUI() {
         initComponents();
         setLocationRelativeTo(null);
-        
-        String test = "A";
-        try{
-        test = StringEncrypt.fileSha256ToBase64("test");
-        } catch(Exception e){
-        }
-        
-        System.out.println(test);
+       
     }
 
     /**
@@ -81,9 +74,9 @@ public class CryptoGUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Passkey (Optional):");
+        jLabel3.setText("Passkey (Required):");
 
-        jPanel1.setBackground(new java.awt.Color(127, 140, 141));
+        jPanel1.setBackground(new java.awt.Color(38, 35, 34));
         jPanel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel1MouseClicked(evt);
@@ -111,7 +104,7 @@ public class CryptoGUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.setBackground(new java.awt.Color(127, 140, 141));
+        jPanel2.setBackground(new java.awt.Color(38, 35, 34));
         jPanel2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jPanel2MouseClicked(evt);

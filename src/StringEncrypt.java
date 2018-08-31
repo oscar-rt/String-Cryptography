@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Base64;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -21,6 +23,11 @@ public class StringEncrypt {
     private String encryptedString;
     private String text;
     private String passkey;
+    
+    
+    private final char alphanum[] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+                                    'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+                                    '0','1','2','3','4','5','6','7','8','9'};
     
     public StringEncrypt(String text, String passkey){
         this.text = text;
@@ -40,7 +47,6 @@ public class StringEncrypt {
         else{
             
             
-            
         }
         
         return null;
@@ -51,8 +57,15 @@ public class StringEncrypt {
         return this.encryptedString;
     }
     
-    public static String fileSha256ToBase64(String text) throws NoSuchAlgorithmException{
+    public static String stringSha256ToBase64(String text) throws NoSuchAlgorithmException{
         MessageDigest digester = MessageDigest.getInstance("SHA-256");
         return Base64.getEncoder().encodeToString(digester.digest(text.getBytes()));
+        
+    }
+    
+    private static char[] getCypher(){
+        
+        
+        return null;
     }
 }

@@ -140,13 +140,13 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Passkey (Optional):"/>
+        <Property name="text" type="java.lang.String" value="Passkey (Required):"/>
       </Properties>
     </Component>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="8d" green="8c" red="7f" type="rgb"/>
+          <Color blue="22" green="23" red="26" type="rgb"/>
         </Property>
       </Properties>
       <Events>
@@ -190,7 +190,7 @@
     <Container class="javax.swing.JPanel" name="jPanel2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="8d" green="8c" red="7f" type="rgb"/>
+          <Color blue="22" green="23" red="26" type="rgb"/>
         </Property>
       </Properties>
       <Events>
