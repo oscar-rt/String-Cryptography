@@ -23,7 +23,7 @@ public class StringEncrypt {
     private String encryptedString;
     private String text;
     private String passkey;
-    
+    private String closingBrackets; //Brackets essentially referring to the surrounding hashes
     
     private final char alphanum[] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
                                     'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
@@ -66,6 +66,8 @@ public class StringEncrypt {
     private static char[] getCypher(){
         
         
+        
         return null;
     }
 }
+
