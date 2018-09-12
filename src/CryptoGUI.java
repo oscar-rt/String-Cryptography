@@ -1,4 +1,7 @@
 
+import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.UIManager;
 
 /*
@@ -21,7 +24,11 @@ public class CryptoGUI extends javax.swing.JFrame {
     public CryptoGUI() {
         initComponents();
         setLocationRelativeTo(null);
-       
+        try {
+            System.out.print(StringEncrypt.stringSha256ToBase64("Aiaodia98"));
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(CryptoGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     /**
