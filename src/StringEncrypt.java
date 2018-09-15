@@ -22,7 +22,8 @@ public class StringEncrypt {
     private String encryptedString;
     private String text;
     private String passkey;
-    private String closingBrackets; //Brackets essentially referring to the surrounding hashes
+    private String openingBracket;
+    private String closingBracket; //Brackets essentially referring to the surrounding hashes
     private final int HASH_STRING_SIZE = 43;
     
     private final char alphanum[] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
@@ -58,13 +59,16 @@ public class StringEncrypt {
                 
                 cypher = new ArrayList<>();
                 String hash = stringSha256ToBase64(this.passkey);
-                this.closingBrackets = hash;
+                this.openingBracket = hash;
                 char[] hashA = hash.toCharArray();
                 
                 while(cypher.size() < 64){
                     if(!cypher.isEmpty()){
                         hash = stringSha256ToBase64(hash);
                         hashA = hash.toCharArray();
+                        if(cypher.size() == 1){
+                            this.closingBracket = hash;
+                        }
                     }
                     for(int i = 0; i < hashA.length; i++){
                         if(!cypher.contains(hashA[i])){
@@ -117,7 +121,7 @@ public class StringEncrypt {
 
     private void encryptedRandomString() {
         //surround our string with the padded encrypted string brackets
-        String paddedES = closingBrackets + encryptedString + closingBrackets;
+        String paddedES = openingBracket + encryptedString + closingBracket;
         
         //We get our hash-dependent values to personalize the string
         int sum = 0;
