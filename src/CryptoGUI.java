@@ -21,21 +21,14 @@ public class CryptoGUI extends javax.swing.JFrame {
     
     public static final int STRING_LIMIT = 1000000;
     
-
-    
     /**
      * Creates new form CryptoGUI
      */
     public CryptoGUI() {
         initComponents();
         setLocationRelativeTo(null);
-        try {
-            System.out.print(StringEncrypt.stringSha256ToBase64(" "));
-        } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(CryptoGUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,7 +67,9 @@ public class CryptoGUI extends javax.swing.JFrame {
         outputArea.setEditable(false);
         outputArea.setBackground(new java.awt.Color(240, 240, 240));
         outputArea.setColumns(20);
+        outputArea.setLineWrap(true);
         outputArea.setRows(5);
+        outputArea.setWrapStyleWord(true);
         outputArea.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         jScrollPane2.setViewportView(outputArea);
 
@@ -196,12 +191,22 @@ public class CryptoGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_passkeyFieldActionPerformed
 
     private void decryptButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decryptButtonMouseClicked
-       System.out.print("Test 1");
+        StringDecrypt decryptor = new StringDecrypt(this.inputArea.getText(), this.passkeyField.getText());
+        this.inputArea.setText("");
+        this.outputArea.setText("");
+        try {
+            OperationReport report = decryptor.decrypt();
+        } catch (NoSuchAlgorithmException ex) {
+        }
+        this.outputArea.setText(decryptor.getDecryptedString());
     }//GEN-LAST:event_decryptButtonMouseClicked
 
     private void encryptButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_encryptButtonMouseClicked
         StringEncrypt encryptor = new StringEncrypt(this.inputArea.getText(), this.passkeyField.getText());
-        encryptor.encrypt();
+        this.inputArea.setText("");
+        this.outputArea.setText("");
+        OperationReport report = encryptor.encrypt();
+        this.outputArea.setText(encryptor.getEncryptedString());
     }//GEN-LAST:event_encryptButtonMouseClicked
 
     /**

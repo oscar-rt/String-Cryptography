@@ -18,6 +18,13 @@ public class StringDecrypt {
     String decryptedString;
     private String text;
     private String passkey;
+    private String closingBrackets; //Brackets essentially referring to the surrounding hashes
+    private final int HASH_STRING_SIZE = 43;
+    
+    private final char alphanum[] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+                                    'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+                                    '0','1','2','3','4','5','6','7','8','9', ' ', '.'};
+    private ArrayList<Character> cypher;
     
     public StringDecrypt(String text, String passkey){
         this.text = text;
@@ -31,25 +38,6 @@ public class StringDecrypt {
         }
         else{
             if(text != null && !text.equals("")){
-            ArrayList<Character> character = new ArrayList<>();
-            String baseHash = null;
-            while(character.size() < 64){
-                if(character.isEmpty()){
-                    baseHash = StringEncrypt.stringSha256ToBase64(passkey);
-                }
-                else{
-                    baseHash = StringEncrypt.stringSha256ToBase64(baseHash);
-                }
-                char[] currCypher = baseHash.toCharArray();
-                for(int i = 0; i < currCypher.length; i++){
-                    if(!character.contains(currCypher[i])){
-                        character.add(currCypher[i]);
-                    }
-                }
-            }
-            String concat = "";
-            
-            
                 
             }
             else{
