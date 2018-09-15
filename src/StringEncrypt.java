@@ -6,13 +6,10 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Base64;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 /**
  *
@@ -29,6 +26,7 @@ public class StringEncrypt {
     private final char alphanum[] = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
                                     'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
                                     '0','1','2','3','4','5','6','7','8','9', '+', '/'};
+    private ArrayList<Character> cypher;
     
     public StringEncrypt(String text, String passkey){
         this.text = text;
@@ -50,12 +48,29 @@ public class StringEncrypt {
             return new OperationReport(false, "NO PASSKEY ENTERED", "Please enter a passkey.");
         }
         else{
-            if((text.length() + (HASH_STRING_SIZE * 2)) > CryptoGUI.STRING_LIMIT){
-                return new OperationReport(false, "TEXT STRING TOO BIG", "Input a smaller string. \n\n"
-                    + "Max string size is: " + text.length() + (HASH_STRING_SIZE * 2));
+            try {
+                if((text.length() + (HASH_STRING_SIZE * 2)) > CryptoGUI.STRING_LIMIT){
+                    return new OperationReport(false, "TEXT STRING TOO BIG", "Input a smaller string. \n\n"
+                            + "Max string size is: " + text.length() + (HASH_STRING_SIZE * 2));
+                }
+                
+                cypher = new ArrayList<>();
+                String baseHash = stringSha256ToBase64(this.passkey);
+                
+                while(cypher.size() < 64){
+                    char[] baseH = baseHash.toCharArray();
+                    for(int i = 0; i < baseH.length; i++){
+                        if(!cypher.contains(baseH[i])){
+                            cypher.add(baseH[i]);
+                        }
+                    }
+                }
+                
+                System.out.println(cypher.toString());
+                
+            } catch (NoSuchAlgorithmException ex) {
+                Logger.getLogger(StringEncrypt.class.getName()).log(Level.SEVERE, null, ex);
             }
-            
-            
             
         }
         
