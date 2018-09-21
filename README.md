@@ -6,7 +6,7 @@
 
 ## How do I encrypt or decrypt a string?
 
-Simply copy and paste your string into the white textbox, enter a passkey *(if encrypting, choose one, otherwise, enter the passkey you were given)*, and click on the appropriate button.
+Simply copy and paste your string (or enter it manually) into the white textbox, enter a passkey *(if encrypting, choose one, otherwise, enter the passkey you were given)*, and click on the appropriate button.
 
 The output of the operation will be displayed in the grey textbox. This textbox will not be editable, but you can select all and copy.
 
