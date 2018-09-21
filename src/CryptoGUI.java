@@ -3,6 +3,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 
 /*
@@ -192,27 +193,36 @@ public class CryptoGUI extends javax.swing.JFrame {
 
     private void decryptButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_decryptButtonMouseClicked
         StringDecrypt decryptor = new StringDecrypt(this.inputArea.getText(), this.passkeyField.getText());
-        this.inputArea.setText("");
-        this.outputArea.setText("");
-        try {
-            OperationReport report = decryptor.decrypt();
-        } catch (NoSuchAlgorithmException ex) {
+        OperationReport report = decryptor.decrypt();
+        
+        if(report.status){
+            this.inputArea.setText("");
+            this.outputArea.setText("");
+            this.outputArea.setText(decryptor.getDecryptedString());
         }
-        this.outputArea.setText(decryptor.getDecryptedString());
+        else{
+            JOptionPane.showMessageDialog(this, report.reportBody, report.reportName, JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_decryptButtonMouseClicked
 
     private void encryptButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_encryptButtonMouseClicked
         StringEncrypt encryptor = new StringEncrypt(this.inputArea.getText(), this.passkeyField.getText());
-        this.inputArea.setText("");
-        this.outputArea.setText("");
         OperationReport report = encryptor.encrypt();
-        this.outputArea.setText(encryptor.getEncryptedString());
+        
+        if(report.status){
+            this.inputArea.setText("");
+            this.outputArea.setText("");
+            this.outputArea.setText(encryptor.getEncryptedString());
+        }
+        else{
+            JOptionPane.showMessageDialog(this, report.reportBody, report.reportName, JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_encryptButtonMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) throws NoSuchAlgorithmException {
+    public static void main(String args[]){
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
