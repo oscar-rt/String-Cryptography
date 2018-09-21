@@ -2,7 +2,7 @@
 
 #### A simple desktop app for encrypting and decrypting strings in Java
 <p align="center">
-![alt text](https://github.com/oscar-rt/string-cryptography/blob/master/img/app.PNG "String Cryptography App")
+   <img src="https://github.com/oscar-rt/string-cryptography/blob/master/img/app.PNG">
 <p/>
 ## How do I encrypt or decrypt a string?
 
