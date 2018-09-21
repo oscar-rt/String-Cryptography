@@ -1,6 +1,6 @@
-#String Cryptography
+##String Cryptography
 
-#####A simple desktop app for encrypting and decrypting strings in Java
+####A simple desktop app for encrypting and decrypting strings in Java
 
 ![alt text](https://github.com/oscar-rt/string-cryptography/blob/master/img/app.PNG "String Cryptography App")
 
