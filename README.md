@@ -20,8 +20,11 @@ The output of the operation will be displayed in the grey textbox. This textbox 
 
 #### Changelog:
 
+
 -First release of String Cryptography app
+
 -No known bugs 
+
 -Should encrypt everything correctly
 
 Enjoy your cryptin'
