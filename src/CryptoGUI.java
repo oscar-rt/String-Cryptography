@@ -1,8 +1,4 @@
 
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 

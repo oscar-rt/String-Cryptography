@@ -2,7 +2,7 @@
 /**
  *
  * This class basically returns an operation report for whatever operation needs to be done.
- * 
+ * -Oscar
  */
 public class OperationReport {
     
