@@ -1,9 +1,9 @@
 # String Cryptography
 
 #### A simple desktop app for encrypting and decrypting strings in Java
-
+<p align="center">
 ![alt text](https://github.com/oscar-rt/string-cryptography/blob/master/img/app.PNG "String Cryptography App")
-
+<p/>
 ## How do I encrypt or decrypt a string?
 
 Simply copy and paste your string (or enter it manually) into the white textbox, enter a passkey *(if encrypting, choose one, otherwise, enter the passkey you were given)*, and click on the appropriate button.
