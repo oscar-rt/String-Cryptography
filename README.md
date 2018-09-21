@@ -11,7 +11,7 @@ The output of the operation will be displayed in the grey textbox. This textbox 
 ##Releases:
 
 ####V 0.89
-[String Cryptography v 0.89 JAR](https://github.com/oscar-rt/string-cryptography/blob/master/StringCryptography0.89.zip)  
+[String Cryptography v 0.89 JAR](https://github.com/oscar-rt/string-cryptography/raw/master/StringCryptography0.89.zip)  
 
 ####Changelog:
 -First release of String Cryptography app
